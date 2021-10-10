@@ -1,0 +1,60 @@
+@import url("./root.css");
+/* ------- */
+
+/* dark */
+.this-dark {
+  color: var(--this-dark) !important;
+}
+
+.bg-this-dark {
+  background: var(--this-dark) !important;
+}
+
+/* semi dark */
+.this-semi-dark {
+  color: var(--this-semi-dark) !important;
+}
+
+.bg-this-semi-dark {
+  background: var(--this-semi-dark) !important;
+}
+
+/* primary */
+.this-primary {
+  color: var(--this-primary) !important;
+}
+
+.bg-this-primary {
+  background: var(--this-primary) !important;
+}
+
+/* primary lite */
+.this-primary-lt {
+  color: var(--this-primary-lt);
+}
+
+.bg-this-primary-lt {
+  background: var(--this-primary-lt);
+}
+
+/* secondary */
+.this-secondary {
+  color: var(--this-secondary);
+}
+
+.bg-this-secondary {
+  background: var(--this-secondary);
+}
+
+/* ============ */
+/* ============ */
+/* ============ */
+
+/* shadows */
+.this-shadow-lg {
+  box-shadow: var(--shadow-bg);
+}
+
+.this-shadow {
+  box-shadow: var(--shadow);
+}
