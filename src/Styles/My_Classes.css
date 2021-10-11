@@ -94,6 +94,7 @@ button
   font-weight: 500;
   letter-spacing: 0.1em;
   box-sizing: border-box;
+  text-decoration: none;
 }
 .my-btn-outline {
   background: none;
@@ -102,6 +103,7 @@ button
   font-weight: 500;
   letter-spacing: 0.1em;
   transition: all 0.2s;
+  text-decoration: none;
 }
 .my-btn-outline:hover {
   background: var(--this-primary);
@@ -116,4 +118,8 @@ button
 .this-active {
   background: #3399ff30;
   color: white;
+}
+/* text dacorantion */
+.td-none {
+  text-decoration: none;
 }

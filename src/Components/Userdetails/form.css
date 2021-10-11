@@ -1,0 +1,46 @@
+@import url("../../Styles/root.css");
+/* form */
+.form {
+  width: 100%;
+  max-width: 500px;
+  padding: 1.5rem 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--this-dark);
+  border-radius: 10px;
+}
+/* label + inputs */
+.form input:not([type="submit"]),
+label {
+  width: 100%;
+  border-radius: 5px;
+  border: 3px solid #ffffff10;
+  background: var(--this-primary-lt);
+  padding: 0.6rem;
+  color: var(--this-secondary);
+  outline: none;
+}
+input:focus:not([type="submit"]) {
+  border-color: var(--this-secondary-lt) !important;
+}
+
+/* error box */
+.error {
+  border: 2px solid #ff3568;
+  color: #ff3568;
+  font-weight: 500;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+/* ---- */
+.forget-pass {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.forget-pass:active {
+  letter-spacing: 0.1em;
+}

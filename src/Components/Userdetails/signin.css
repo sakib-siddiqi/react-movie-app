@@ -1,0 +1,9 @@
+.fab {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.fab:hover {
+  transform: scale(1.1);
+  color: white;
+  filter: drop-shadow(0 1px 10px #ffffff80);
+}
