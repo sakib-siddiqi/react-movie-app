@@ -10,6 +10,12 @@ const Menu = () => {
       >
         Home
       </NavLink>
+      <NavLink
+        to="/movies"
+        className="text-light rounded-3 px-3 mx-1 this-active td-none py-1 px-3"
+      >
+        Movies
+      </NavLink>
     </Nav>
   );
 };

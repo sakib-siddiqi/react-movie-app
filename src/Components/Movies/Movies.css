@@ -1,0 +1,35 @@
+.banner {
+  height: 430px;
+  max-height: 430px;
+  background-blend-mode: multiply;
+  background-position: top center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0px 35px 35px -30px #00000040;
+  padding: 2rem;
+}
+.banner-title {
+  font-family: "Chewy", cursive;
+  font-size: 4rem;
+  color: #ffffff;
+}
+.banner-play {
+  border-radius: 1000px;
+  aspect-ratio: 1;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 20px #3399ff40, 0 0 0 10px #3399ff80;
+}
+.card-name {
+  width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
+.poster {
+  image-resolution: 100dpi;
+}

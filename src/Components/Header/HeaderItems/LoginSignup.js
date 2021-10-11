@@ -9,7 +9,9 @@ const LoginSignup = () => {
       >
         Login
       </NavLink>
-      <button className="my-btn py-1 px-3 rounded-pill">Signup</button>
+      <NavLink to="/signup" className="my-btn py-1 px-3 rounded-pill">
+        Signup
+      </NavLink>
     </div>
   );
 };

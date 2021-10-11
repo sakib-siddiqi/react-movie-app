@@ -110,9 +110,13 @@ button
   color: white;
   transition: all 0.2s;
 }
+.my-btn:hover {
+  color: white;
+}
 .my-btn:active,
 .my-btn-outline:active {
   background: #3399ffdd;
+  color: white;
 }
 /*  */
 .this-active {
