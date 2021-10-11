@@ -1,6 +1,6 @@
 import React from "react";
 import { Row } from "react-bootstrap";
-import useMovies from "../../../Hooks/useMovies";
+import useMovies from "../../../../Hooks/useMovies";
 import Movie from "./Movie";
 
 const AllMovies = () => {

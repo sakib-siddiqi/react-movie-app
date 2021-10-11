@@ -6,13 +6,15 @@ const Menu = () => {
     <Nav className="ms-auto">
       <NavLink
         to="/home"
-        className="text-light rounded-3 px-3 mx-1 this-active td-none py-1 px-3"
+        className="text-light rounded-3 px-3 mx-1 td-none py-1 px-3"
+        activeClassName=" this-active"
       >
         Home
       </NavLink>
       <NavLink
         to="/movies"
-        className="text-light rounded-3 px-3 mx-1 this-active td-none py-1 px-3"
+        className="text-light rounded-3 px-3 mx-1 td-none py-1 px-3"
+        activeClassName=" this-active"
       >
         Movies
       </NavLink>

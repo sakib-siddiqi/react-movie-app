@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import AllMovies from "./Items/AllMovies";
-import Banner from "./Items/Banner";
+import Banner from "./Item/Banner";
+import AllMovies from "./Item/AllMovies";
 import "./Movies.css";
 const Movies = () => {
   return (

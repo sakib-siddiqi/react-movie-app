@@ -1,0 +1,13 @@
+@import url("../../../Styles/root.css");
+.movie-title {
+  border-left: 5px solid var(--this-primary);
+  color: var(--this-secondary);
+}
+.sub-title {
+  border-bottom: 3px solid var(--this-primary);
+  color: var(--this-secondary);
+}
+.data {
+  line-height: 1.5;
+  color: var(--this-primary-lt) !important;
+}

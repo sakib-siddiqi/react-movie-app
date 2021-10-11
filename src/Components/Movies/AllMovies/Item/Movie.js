@@ -1,8 +1,9 @@
 import React from "react";
 import { Col } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 const Movie = ({ movie }) => {
-  const { title, poster_path } = movie;
+  const { title, poster_path, id } = movie;
   console.log(movie);
   return (
     <Col xs={6} md={4} lg={3}>
@@ -16,7 +17,9 @@ const Movie = ({ movie }) => {
           <h5 className="text-dark fw-bold m-0 flex-grow-1 card-name me-2">
             {title}
           </h5>
-          <i className="far fa-play-circle fa-2x text-light"></i>
+          <NavLink to={`/movies/${id}`}>
+            <i className="far fa-play-circle fa-2x text-light"></i>
+          </NavLink>
         </div>
       </div>
     </Col>

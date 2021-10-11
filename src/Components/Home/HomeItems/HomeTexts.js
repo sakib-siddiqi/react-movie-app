@@ -4,6 +4,7 @@ import React from "react";
 import { Col } from "react-bootstrap";
 import "../home.css";
 import { faArrowAltCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { NavLink } from "react-router-dom";
 const HomeTexts = () => {
   return (
     <Col xs={12} md={7}>
@@ -17,9 +18,9 @@ const HomeTexts = () => {
         It’s a web App by <span className="this-primary">react.js</span> for
         Movies details.
       </p>
-      <Button className="my-btn-outline rounded-2 py-2 px-4">
+      <NavLink to="/movies" className="my-btn-outline rounded-2 py-2 px-4">
         Take a Look <FontAwesomeIcon icon={faArrowAltCircleRight} />
-      </Button>
+      </NavLink>
     </Col>
   );
 };

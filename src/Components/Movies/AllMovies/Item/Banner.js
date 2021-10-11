@@ -1,5 +1,5 @@
 import React from "react";
-import useMovies from "../../../Hooks/useMovies";
+import useMovies from "../../../../Hooks/useMovies";
 
 const Banner = () => {
   const { movies } = useMovies();
