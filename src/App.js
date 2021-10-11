@@ -1,11 +1,17 @@
 import React from "react";
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
+import Home from "./Components/Home/Home";
 import "./Styles/App.css";
-import "./Styles/My_Classes.css";
 function App() {
   return (
-    <div className="App-header bg-this-primary">
-      <h1 className="this-semi-dark">Hi react.js</h1>
-    </div>
+    <>
+      <Header />
+      <main className="bg-this-semi-dark  center">
+        <Home />
+      </main>
+      <Footer />
+    </>
   );
 }
 export default App;

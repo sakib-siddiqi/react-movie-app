@@ -1,17 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 /* ----------- */ /* root */ /* ----------- */
-:root  {
+:root {
   --this-dark: #071a2f;
   --this-semi-dark: #001e3c;
   --this-primary: #3399ff;
   --this-primary-lt: #3399ff0d;
   --this-secondary: #ccccff;
+  /* shadow */
   --shadow-bg: 0px 35px 50px -40px #00000040;
   --shadow: 0px 25px 35px -10px #0000000d;
-}
-/* ----------- */
-/* default styles */
-/* ----------- */
-* {
-  font-family: "DM Sans", sans-serif;
+  /* spacing */
+  --spacing-1: 0.05em;
+  --spacing-2: 0.1em;
 }
