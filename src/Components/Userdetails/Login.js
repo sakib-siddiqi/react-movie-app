@@ -1,19 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 import "./form.css";
 import SigninWith from "./SigninWith";
 const Login = () => {
+  const { handleSignin } = useFirebase();
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   return (
     <div className="container center my-4">
       <form
-        onSubmit={handleSubmit((data) => console.log(data))}
+        onSubmit={handleSubmit((data) =>
+          handleSignin(data.email, data.password)
+        )}
         className="form py-4"
       >
         <h3 className="text-light">Login</h3>
@@ -29,6 +32,7 @@ const Login = () => {
         <label className="my-2">
           <p>Password :</p>
           <input
+            type="password"
             placeholder="Password"
             {...register("password", { required: true })}
           />

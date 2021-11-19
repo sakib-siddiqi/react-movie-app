@@ -8,7 +8,7 @@ const AllMovies = () => {
   return (
     <Row className="g-4">
       {movies.map((movie) => (
-        <Movie movie={movie} />
+        <Movie movie={movie} key={movie.id} />
       ))}
     </Row>
   );

@@ -9,5 +9,8 @@
 }
 .data {
   line-height: 1.5;
-  color: var(--this-primary-lt) !important;
+  color: rgb(231, 227, 255) !important;
+}
+.budget {
+  background: #ffffff10;
 }

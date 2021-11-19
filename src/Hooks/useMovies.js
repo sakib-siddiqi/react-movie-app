@@ -8,11 +8,9 @@ const useMovies = () => {
   // fatching data
   useEffect(() => {
     //   Calling Api + setting movies data
-    (async () => {
-      const fetchResult = await fetch(url);
-      const data = await fetchResult.json();
-      setMovies(data.results);
-    })();
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setMovies(data.results));
   }, []);
 
   /*

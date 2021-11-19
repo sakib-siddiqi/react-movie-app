@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 
 const Movie = ({ movie }) => {
   const { title, poster_path, id } = movie;
-  console.log(movie);
   return (
     <Col xs={6} md={4} lg={3}>
       <div className="card-body bg-this-primary p-0 rounded-1">

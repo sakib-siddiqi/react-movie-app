@@ -3,7 +3,7 @@ import React from "react";
 const HomeSVG = () => {
   return (
     <svg viewBox="0 0 574 331" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g id="undraw_movie_night_fldd 1" clip-path="url(#clip0)">
+      <g id="undraw_movie_night_fldd 1" clipPath="url(#clip0)">
         <path
           id="Vector"
           d="M9.90039 127.113H198.693C201.151 127.113 203.508 128.09 205.246 129.828C206.984 131.565 207.96 133.922 207.96 136.38V151.1H0.632812V136.38C0.632814 133.922 1.60922 131.565 3.34722 129.828C5.08523 128.09 7.44247 127.113 9.90039 127.113Z"
@@ -164,9 +164,9 @@ const HomeSVG = () => {
           y2="35.6505"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-opacity="0.12" />
-          <stop offset="0.55" stop-opacity="0.09" />
-          <stop offset="1" stop-opacity="0.02" />
+          <stop stopOpacity="0.12" />
+          <stop offset="0.55" stopOpacity="0.09" />
+          <stop offset="1" stopOpacity="0.02" />
         </linearGradient>
         <clipPath id="clip0">
           <rect width="574" height="331" fill="white" />

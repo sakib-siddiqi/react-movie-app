@@ -1,15 +1,17 @@
 import React from "react";
-const HeaderProfile = () => {
+import { NavLink } from "react-router-dom";
+const HeaderProfile = ({ user }) => {
   return (
     <div>
-      <button className="my-btn py-1 ps-3 me-3 pe-1 rounded-pill fw-bold">
-        Sakib
-        <img
-          src="https://lh3.googleusercontent.com/ogw/ADea4I4ZcFOzqfulSfbvfep5DT-J-i_RDsijvtyuVWvguw=s83-c-mo"
-          alt=""
-          className="Avtar ms-2"
-        />
-      </button>
+      <NavLink to="/profile">
+        <button className="my-btn rounded-pill p-0">
+          {user.photoURL ? (
+            <img src={user.photoURL} alt="" className="Avtar rounded-pill" />
+          ) : (
+            <i className="fas fa-user-tie"></i>
+          )}
+        </button>
+      </NavLink>
     </div>
   );
 };

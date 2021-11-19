@@ -1,9 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 import "./form.css";
 import SigninWith from "./SigninWith";
 const SignUp = () => {
+  // -----------firebase
+  const { handleSignup, handleError } = useFirebase();
+  // ----------hook form
   const {
     register,
     handleSubmit,
@@ -12,11 +16,24 @@ const SignUp = () => {
   return (
     <div className="container center my-4">
       <form
-        onSubmit={handleSubmit((data) => console.log(data))}
+        onSubmit={handleSubmit((data) => {
+          data.password === data.rePassword
+            ? handleSignup(data.name, data.email, data.password)
+            : handleError("enter password currectly");
+        })}
         className="form py-4"
       >
         <h3 className="text-light">Signup</h3>
+        {/* popup signin */}
         <SigninWith />
+        <label className="my-2">
+          <p>Your Name : </p>
+          <input
+            type="text"
+            placeholder="Enter Name"
+            {...register("name", { required: true })}
+          />
+        </label>
         <label className="my-2">
           <p>Email : </p>
           <input

@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "@restart/ui/esm/Button";
 import React from "react";
 import { Col } from "react-bootstrap";
 import "../home.css";

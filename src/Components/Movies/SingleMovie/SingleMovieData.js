@@ -4,16 +4,15 @@ import Rating from "react-rating";
 import "./MovieData.css";
 const SingleMovieData = ({ singleMovie }) => {
   const { title, vote_average, budget, overview, release_date } = singleMovie;
-  console.log(singleMovie);
   return (
     <Row className="my-5">
       <Col sm={12} md={6}>
-        <h4 className="movie-title py-2 px-3 l-s-1 fw-bold mb-4">{title}</h4>
+        <h3 className="movie-title py-2 px-3 l-s-1 fw-bold mb-4">{title}</h3>
         <article className="my-4">
           <h5 className="sub-title fw-bold pb-3">
             <i className="fas fa-money-check-alt this-primary"></i> Budget
           </h5>
-          <div className="budget py-2 px-4 l-s-2 h4 this-dark fw-bold bg-this-primary-lt my-3 rounded-3 d-inline-block">
+          <div className="budget py-2 px-4 l-s-2 h4 text-light fw-bold bg-text-light my-3 rounded-3 d-inline-block">
             <i className="fas fa-dollar-sign"></i> {budget}
           </div>
         </article>

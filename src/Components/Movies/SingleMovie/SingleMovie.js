@@ -3,12 +3,10 @@ import { Container } from "react-bootstrap";
 import { NavLink, useParams } from "react-router-dom";
 import useSingleMovie from "../../../Hooks/useSignleMovie";
 import SingleBanner from "./SingleBanner";
-import "./SingleMovie.css";
 import SingleMovieData from "./SingleMovieData";
 const SingleMovie = () => {
   const { id } = useParams();
   const { singleMovie } = useSingleMovie(id);
-  console.log(singleMovie);
   return (
     <Container className="py-5">
       <SingleBanner poster={singleMovie?.backdrop_path} />
