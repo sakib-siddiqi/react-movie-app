@@ -12,7 +12,7 @@ const Banner = () => {
         background: poster,
       }}
     >
-      <h1 className=" text-center banner-title">Danger</h1>
+      <h1 className=" text-center banner-title">{movies[0]?.title}</h1>
       <button className="my-btn p-2 banner-play center">
         <i className="far fa-play-circle fa-2x"></i>
       </button>

@@ -17,7 +17,7 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Menu />
-          {firebase.user.email ? <HeaderProfile user={firebase.user} /> : <LoginSignup />}
+          {firebase.user.uid ? <HeaderProfile user={firebase.user} /> : <LoginSignup />}
         </Navbar.Collapse>
       </Container>
     </Navbar>
