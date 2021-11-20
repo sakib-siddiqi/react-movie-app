@@ -21,10 +21,10 @@ const SingleMovieData = ({ singleMovie }) => {
             <i className="fas fa-star-half-alt  this-primary"></i> Rating
           </h5>
           <Rating
-            initialRating={vote_average / 10}
+            initialRating={Math.round((vote_average / 10)*5)}
             readonly
-            emptySymbol="fas fa-star text-warning"
-            fullSymbol="far fa-star text-warning"
+            emptySymbol="far fa-star text-warning"
+            fullSymbol="fas fa-star text-warning"
           />
         </article>
       </Col>

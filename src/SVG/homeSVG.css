@@ -1,0 +1,40 @@
+#popCorns_1,
+#popCorns_2,
+#popCorns_3 {
+  animation: popcorns 1.5s ease-out infinite both;
+}
+#popCorns_1 {
+  transform: translateY(10);
+  fill: #ffa60069;
+}
+#popCorns_2 {
+  animation-delay: 2s;
+  fill: white;
+}
+#popCorns_3 {
+  animation-delay: 3s;
+  fill: #3399ff;
+}
+#playButton {
+  animation: rotate 3s ease-in-out infinite forwards;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes popcorns {
+  from {
+    transform: translateY(10px);
+    fill-opacity: 1;
+  }
+  to {
+    transform: translateY(-80px);
+    fill-opacity: 0;
+  }
+}
+@keyframes rotate {
+  form {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

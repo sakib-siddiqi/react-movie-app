@@ -22,7 +22,7 @@
   bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  animation: playButton 1s ease-in-out 0.02s infinite ;
+  animation: playButton 1.5s ease-out 0.02s infinite ;
 }
 .card-name {
   width: 75%;
