@@ -1,7 +1,7 @@
 import React from "react";
 import {
   Route,
-  BrowserRouter as Router,
+  BrowserRouter ,
   Switch
 } from "react-router-dom";
 import Footer from "./Components/Footer/Footer";
@@ -10,13 +10,13 @@ import Home from "./Components/Home/Home";
 import Movies from "./Components/Movies/AllMovies/Movies";
 import SingleMovie from "./Components/Movies/SingleMovie/SingleMovie";
 import NotFound from "./Components/Others/NotFound";
-import Success from "./Components/Success/Success";
 import Login from "./Components/Userdetails/Login";
 import SignUp from "./Components/Userdetails/SignUp";
 import UserProfile from "./Components/Userdetails/UserProfile";
 import AuthContext from "./Context/AuthContext";
 import useFirebase from "./Hooks/useFirebase";
 import PrivateRoute from "./Shared/PrivateRoute";
+import { SiteSkeleton } from "./Shared/SkeletonLoading";
 import "./Styles/App.css";
 
 /**
@@ -25,12 +25,12 @@ import "./Styles/App.css";
 function App() {
   const { firebase } = useFirebase();
   return (
-    <>
+    <BrowserRouter >
       {firebase.loading ? (
-        <h1>Loading Data</h1>
+        <SiteSkeleton/>
       ) : (
         <AuthContext>
-          <Router>
+          
             <Header />
             <main className="bg-this-semi-dark  center">
               <Switch>
@@ -48,9 +48,6 @@ function App() {
                 <Route path="/signup">
                   <SignUp />
                 </Route>
-                <Route path="/success">
-                  <Success />
-                </Route>
                 <PrivateRoute path="/profile">
                   <UserProfile />
                 </PrivateRoute>
@@ -58,10 +55,9 @@ function App() {
               </Switch>
             </main>
             <Footer />
-          </Router>
         </AuthContext>
       )}
-    </>
+    </BrowserRouter>
   );
 }
 export default App;

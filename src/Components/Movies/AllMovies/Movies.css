@@ -22,7 +22,7 @@
   bottom: 15%;
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 0 0 0 20px #3399ff40, 0 0 0 10px #3399ff80;
+  animation: playButton 1s ease-in-out 0.02s infinite ;
 }
 .card-name {
   width: 75%;
@@ -32,4 +32,13 @@
 }
 .poster {
   image-resolution: 100dpi;
+}
+@keyframes playButton {
+  from {
+    box-shadow: 0 0 0 0px #3399ff80, 0 0 0 0px #3399ff90, 0 0 0 0px #3399ff;
+    opacity: 1;
+  }
+  to {
+    box-shadow: 0 0 0 40px #3399ff05, 0 0 0 25px #3399ff00, 0 0 0 10px #3399ff00;
+  }
 }

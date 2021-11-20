@@ -9,7 +9,6 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import initializeAuthentication from "../Firebase/firebase.init";
 initializeAuthentication();
 const auth = getAuth();
@@ -21,9 +20,6 @@ const useFirebase = () => {
 
   /* ---------------- */
   /* ---------------- */
-  const history = useHistory();
-  /* ---------------- */
-  /* ---------------- */
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
@@ -31,13 +27,13 @@ const useFirebase = () => {
   /* ---------------- */
 
   // Google Signin
-  const handleGoogleSignin = () => {
+  const handleGoogleSignin = (redirect) => {
     setLoading(true);
     signInWithPopup(auth, googleProvider)
       .then((res) => {
         setUser(res.user);
         setError("");
-        history.push("/home");
+        redirect();
       })
       .catch((error) => {
         setUser({});
@@ -47,25 +43,29 @@ const useFirebase = () => {
   };
 
   // signup
-  const handleSignup = (userName, email, password) => {
+  const handleSignup = ({ userName, email, password }, redirect, callBack) => {
     setLoading(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         updateProfile(auth.currentUser, {
           displayName: userName,
-        }).then((res) => setUser(res.user));
-        history.push("/success");
+        }).then((res) => {
+          setUser(res?.user);
+          redirect();
+          callBack();
+        });
       })
       .catch((err) => setError(err.code))
       .finally(() => setLoading(false));
   };
   // signin
-  const handleSignin = (email, password) => {
+  const handleSignin = ({ email, password }, redirect) => {
     setLoading(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
         setUser(res.user);
         setError("");
+        redirect();
       })
       .catch((error) => setError(error.code))
       .finally(() => setLoading(false));
@@ -74,16 +74,18 @@ const useFirebase = () => {
   //  Sign out
   /*----------------*/
   const handleSignOut = () => {
-    signOut(auth).then(() => {
-      setUser({});
-    });
+    signOut(auth)
+      .then(() => {
+        setUser({});
+      })
+      .catch((err) => setError(err.code));
   };
   /*----------------*/
   //  user state Change
   /*----------------*/
   useEffect(() => {
     setLoading(true);
-    onAuthStateChanged(auth, (user) => {
+    return onAuthStateChanged(auth, (user) => {
       user ? setUser(user) : setUser({});
       setLoading(false);
     });

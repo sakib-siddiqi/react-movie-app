@@ -5,23 +5,29 @@ import { SekeletonMovieCard } from "../../../../Shared/SkeletonLoading";
 import Movie from "./Movie";
 
 const AllMovies = () => {
-  const { movies } = useMovies();
+  const { moviesData } = useMovies();
   return (
-    <Row className="g-4">
-      {movies.length ? (
-        <>
-          {movies.map((movie) => (
-            <Movie movie={movie} key={movie.id} />
-          ))}
-        </>
+    <>
+      {moviesData.error ? (
+        <h1 className="text-muted">{moviesData.error}</h1>
       ) : (
-        <>
-          {[...Array(12)].map((e,i) => (
-            <SekeletonMovieCard key={i}/>
-          ))}
-        </>
+        <Row className="g-4">
+          {moviesData.movies.length ? (
+            <>
+              {moviesData.movies.map((movie) => (
+                <Movie movie={movie} key={movie.id} />
+              ))}
+            </>
+          ) : (
+            <>
+              {[...Array(12)].map((e, i) => (
+                <SekeletonMovieCard key={i} />
+              ))}
+            </>
+          )}
+        </Row>
       )}
-    </Row>
+    </>
   );
 };
 

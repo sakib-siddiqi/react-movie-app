@@ -7,8 +7,8 @@ const UserProfile = () => {
   const { firebase, handleSignOut } = useFirebase();
   return (
     <Container>
-      <Row>
-        <Col sm={12} md={6}>
+      <Row className="justify-content-center">
+        <Col sm={12} md={6} className="text-center">
           {firebase.user.uid && (
             <>
               {firebase.user?.photoURL ? (

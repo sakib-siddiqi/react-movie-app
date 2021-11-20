@@ -1,28 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { NavLink } from "react-router-dom";
-import useFirebase from "../../Hooks/useFirebase";
+import { NavLink, useLocation, useHistory } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import "./form.css";
 import SigninWith from "./SigninWith";
+
 const SignUp = () => {
   // -----------firebase
-  const { handleSignup, handleError } = useFirebase();
+  const { firebase,handleSignup } = useAuth();
   // ----------hook form
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+  //---------States
+  const [passNotMatched, setPassNotMatched] = useState(false);
+  const [wait, setWait] = useState("");
+  //-------------------------
+  const location = useLocation();
+  const history = useHistory();
+  const fromPath = location.state?.from?.pathname;
+  const redirect = () => history.push(fromPath || "/");
+  //---------handler
+  const handler = (data) => {
+    if (data.password === data.rePassword) {
+      setWait("loading...");
+      handleSignup(
+        { userName: data.name, email: data.email, password: data.password },
+        redirect,
+        () => setWait("")
+      );
+      reset();
+      setPassNotMatched(false);
+    } else {
+      setPassNotMatched(true);
+    }
+  };
   return (
     <div className="container center my-4">
-      <form
-        onSubmit={handleSubmit((data) => {
-          data.password === data.rePassword
-            ? handleSignup(data.name, data.email, data.password)
-            : handleError("enter password currectly");
-        })}
-        className="form py-4"
-      >
+      <form onSubmit={() => handleSubmit(handler)} className="form py-4">
         <h3 className="text-light">Signup</h3>
         {/* popup signin */}
         <SigninWith />
@@ -68,16 +86,19 @@ const SignUp = () => {
         ------------------------- 
         */}
 
-        {errors.password !== errors.rePassword && (
-          <span className="error p-2 my-3">Enter Password Currectly</span>
+        {passNotMatched && (
+          <span className="error p-2 mt-3">Enter Password Currectly</span>
         )}
-        {errors.email && (
-          <span className="error p-2 my-3">Enter your valid email</span>
+        {Object.keys(errors).length && (
+          <span className="error p-2 mt-3">please check this field</span>
+        )}
+         {(firebase.error) && (
+          <span className="error p-2 my-3">{firebase.error}</span>
         )}
         <input
-          className="my-btn py-1 px-3 rounded-pill my-3"
+          className="my-btn py-1 px-3 rounded-pill mb-3"
           type="submit"
-          value="Signup"
+          value={wait || "Signup"}
         />
         <NavLink to="/login" className="my-btn-outline p-2 rounded-3">
           Have an account ?
