@@ -127,3 +127,7 @@ button
 .td-none {
   text-decoration: none;
 }
+/* Aspect ration */
+.a-r-3{
+  aspect-ratio: 2.75/4 !important;
+}

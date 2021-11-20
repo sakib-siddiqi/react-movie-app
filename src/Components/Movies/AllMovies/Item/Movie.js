@@ -9,7 +9,7 @@ const Movie = ({ movie }) => {
       <div className="card-body bg-this-primary p-0 rounded-1">
         <img
           src={`https://image.tmdb.org/t/p/w1280${poster_path}`}
-          className="img-fluid card-img-top poster"
+          className="img-fluid card-img-top poster a-r-3"
           alt=""
         />
         <div className="card-body d-flex center justify-content-between">
